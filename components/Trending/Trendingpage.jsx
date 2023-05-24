@@ -7,6 +7,7 @@ import Link from "next/link";
 import Shimmersearchpage from "../search/Shimmersearchpage";
 import VideoCard from "../Home/VideoCard";
 import ShimmerVideoCard from "../Home/ShimmerVideoCard";
+import SmallTrendingPage from "./SmallTrendingPage";
 const SearchItemCard = ({ searchPageVideos }) => {
   const {
     title,
@@ -112,7 +113,7 @@ const Trendingpage = () => {
                 <SearchItemCard searchPageVideos={item} />
               </div>
               <div className="md:hidden">
-                <VideoCard homePageVideos={item} />
+                <SmallTrendingPage homePageVideos={item} />
               </div>
             </Link>
           );
