@@ -4,10 +4,10 @@ const VideoCard = ({homePageVideos}) => {
     const {title,uploadedAt,thumbnail,views,channel,duration_formatted} = homePageVideos
     // console.log(homePageVideos?.durationFormatted)
     return (
-    <div className="w-80 mb-9 mr-3">
+    <div className="w-full md:w-80 mb-3 md:mb-9">
       <div className="relative">
       <img
-        className="object-cover rounded-md "
+        className="object-cover md:rounded-md "
         src={thumbnail?.url}
         alt=""
         />
@@ -17,7 +17,7 @@ const VideoCard = ({homePageVideos}) => {
           </p>
         </div>
         </div>
-      <div className="mt-2 flex">
+      <div className="lg:mt-2 flex">
         <div className="p-2">
             <div className="w-12 h-12 rounded-full bg-center object-fit" style={{backgroundImage: `url(${channel?.icon})` }}>
             </div>

@@ -1,10 +1,8 @@
 import React from "react";
 import { convertNumber } from "../../utils/helperfunctions";
-import Link from "next/link";
 const RecomendedVideoCard = ({recomendedVideos}) => {
     const {title,uploadedAt,thumbnail,views,channel,duration_formatted,id} = recomendedVideos
     return (
-    <Link href={`/watch?v=${id}`}>
     <div className=" mb-9 mr-3 grid grid-cols-12 w-[348px] justify-items-center hover:cursor-pointer">
       <div className="relative mr-3  h-full col-span-6 bg-gray-200">
       <img
@@ -34,7 +32,6 @@ const RecomendedVideoCard = ({recomendedVideos}) => {
         </div>
       </div>
     </div>
-    </Link>
   );
 };
 

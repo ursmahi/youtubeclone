@@ -17,9 +17,9 @@ const AboutChannel = ({ videoid }) => {
   }, []);
   return (
     <div className="mt-5">
-      <h2 className="font-semibold text-xl">{videoDetials?.title}</h2>
-      <div className="grid grid-cols-12 mt-4">
-        <div className="col-span-6 flex items-center gap-8">
+      <h2 className="ml-3 md:ml-0 font-semibold text-xl">{videoDetials?.title}</h2>
+      <div className="md:grid md:grid-cols-12 mt-4 ml-4 md:ml-0">
+        <div className="md:col-span-6 flex items-center gap-8">
           <img
             alt="user-icon"
             src={channelDetails?.icon}
@@ -35,18 +35,7 @@ const AboutChannel = ({ videoid }) => {
             Subscribe
           </button>
         </div>
-        <div className="col-span-6">
-          <button className="hover:rounded-full hover:bg-gray-200 p-2">
-            {/* <div className="flex">
-              <PhThumbsUpThin className="text-2xl" />
-              <p>{comments?.likeCount==0?'':comments?.likeCount}</p>
-              </div> */}
-          </button>
-          <button></button>
-          <button></button>
-          <button></button>
-          <button></button>
-        </div>
+
       </div>
       <VideoDescription details={videoDetials} />
     </div>

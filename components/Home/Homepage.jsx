@@ -25,7 +25,7 @@ const Homepage = () => {
   return (
     <>
       <RecomendedList />
-      <div className="flex flex-wrap space-x-5 ">
+      <div className="flex flex-wrap md:space-x-5 ">
         {homePageVideos.length > 0 ? (
           <>
             {homePageVideos.map((item, index) => {

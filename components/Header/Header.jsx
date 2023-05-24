@@ -7,12 +7,13 @@ import { useDispatch, useSelector } from "react-redux";
 import { toogleMenu, toogleWatchMenu } from "../../utils/redux/appSlice";
 import Link from "next/link";
 import Image from "next/image";
-import {redirect } from "next/navigation";
+import {redirect, useRouter } from "next/navigation";
 import { usePathname } from 'next/navigation';
 
 import SearchSuggestions from "./SearchSuggestions";
 const Header = () => {
     const path = usePathname()
+    const router = useRouter()
 
 //   const location = useLocation();
 //   const navigate = useNavigate();
@@ -38,8 +39,8 @@ const Header = () => {
   };
   const sendSearchRequest = () => {
     if (searchQuery.length >= 3) {
-      console.log(`Query : ${searchQuery}`);
-      redirect(`/search?query=${searchQuery}`);
+      setSearchSuggestionsList([])
+      router.push(`/search?query=${searchQuery}`)
     }
   };
   const getSearchTypingSuggestions = async (searchKey) => {

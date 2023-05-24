@@ -14,7 +14,7 @@ const RecomendedButton =({buttonList})=>{
 }
 const RecomendedList = () => {
   return (
-    <div className='flex sticky top-[72px] z-20 bg-white'>
+    <div className=' sticky top-[72px] z-20 bg-white hidden md:block'>
     {
         ListOfRemomendedToWatch.map((item,index)=>(
             <RecomendedButton key={index} buttonList={item}/>

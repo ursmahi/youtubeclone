@@ -5,6 +5,8 @@ import { menuSetDefault } from "../../utils/redux/appSlice";
 import { useSearchParams } from "next/navigation";
 import Link from "next/link";
 import Shimmersearchpage from "./Shimmersearchpage";
+import VideoCard from "../Home/VideoCard";
+import ShimmerVideoCard from "../Home/ShimmerVideoCard";
 const SearchItemCard = ({ searchPageVideos }) => {
   const {
     title,
@@ -88,9 +90,18 @@ const Searchpage = () => {
       <>
         {Array(5)
           .fill(10)
-          .map((item, index) => (
-            <Shimmersearchpage key={index} />
-          ))}
+          .map((item, index) => {
+            return (
+              <div key={index}>
+                <div className="md:hidden">
+                  <ShimmerVideoCard />
+                </div>
+                <div className="hidden md:block">
+                  <Shimmersearchpage />
+                </div>
+              </div>
+            );
+          })}
       </>
     );
   }
@@ -100,7 +111,12 @@ const Searchpage = () => {
         searchVideosList.map((item) => {
           return (
             <Link href={`/watch?v=${item.id}`} key={item.id}>
-              <SearchItemCard searchPageVideos={item} />
+              <div className="hidden md:block">
+                <SearchItemCard searchPageVideos={item} />
+              </div>
+              <div className="md:hidden">
+                <VideoCard homePageVideos={item} />
+              </div>
             </Link>
           );
         })

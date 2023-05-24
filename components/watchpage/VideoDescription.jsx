@@ -10,20 +10,20 @@ const VideoDescription = ({ details }) => {
     })
   }
   return (
-    <div className="bg-gray-100 rounded-lg p-3 mt-3">
+    <div className="md:bg-gray-100 rounded-lg p-3 mt-3">
       <div className="flex mb-5">
         <p className="font-semibold">{convertNumber(details?.views)} Views</p>
         <p className="font-semibold ml-5">{details?.uploadedAt} </p>
       </div>
       <div
-        className={`leading-6 overflow-hidden ${showMore ? "h-fit" : "h-12"} `}
+        className={`leading-6 overflow-hidden ${showMore ? "h-fit" : "h-12"} hidden md:block `}
       >
         {details?.description?.split("\n").map((item, i) => (
           <p key={i}>{item}</p>
         ))}
       </div>
       <button
-      className="mt-3 font-semibold"
+      className="mt-3 font-semibold hidden md:block"
         onClick={() => {
           setShowMore(!showMore);
           if(showMore){
