@@ -34,11 +34,15 @@ const SearchItemCard = ({ searchPageVideos }) => {
             <p className="text-sm">{uploadedAt}</p>
           </div>
           <div className="flex items-center mt-5">
-            <img
-              alt="user-icon"
-              src={channel?.icon}
-              className="w-10 h-10 rounded-full"
-            />
+            {channel?.icon == null ? (
+              <div className="w-10 h-10 bg-gray-200 rounded-full"></div>
+            ) : (
+              <img
+                alt="user-icon"
+                src={channel?.icon}
+                className="w-10 h-10 rounded-full"
+              />
+            )}
             <p className="opacity-80 text-md ml-4">{channel?.name}</p>
           </div>
           {/* <div className="leading-6 h-24   overflow-hidden font-semibold">
@@ -62,7 +66,7 @@ const Searchpage = () => {
     const searchPageData = await searchPage.json();
     setSearchCount(searchPageData?.length);
     setSearchVideosList(searchPageData);
-    setLoading(false)
+    setLoading(false);
   };
 
   const setMenuDefault = () => {
