@@ -102,16 +102,18 @@ const Header = () => {
       <div className="fixed  w-full  ">
         {searchSuggestionsList.map((item, index) => {
           return (
+            <Link href={(`/search?query=${item}`)} key={index}>
             <div
               className="bg-transparent flex flex-col justify-center items-center"
-              key={index}
               onClick={() => {
-                navigate(`/search?query=${item}`);
                 setSearchSuggestionsList([]);
+                redirect('/')
+                // (`/search?query=${item}`);
               }}
-            >
+              >
               <SearchSuggestions searchSuggest={item} />
             </div>
+              </Link>
           );
         })}
       </div>

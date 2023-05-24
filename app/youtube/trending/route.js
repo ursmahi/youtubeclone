@@ -3,7 +3,7 @@ import { YouTube } from "youtube-sr";
 
 export async function GET(request) {
   let ytData;
-  await YouTube.homepage()
+  await YouTube.trending()
     .then((data) => {
       ytData = data;
     })

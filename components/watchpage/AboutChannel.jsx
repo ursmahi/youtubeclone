@@ -1,6 +1,6 @@
 'use client'
 import React, { useState } from "react";
-import { convertNumber } from "../../utils/helperfunctions";
+// import { convertNumber } from "../../utils/helperfunctions";
 import VideoDescription from "./VideoDescription";
 const AboutChannel = ({ videoid }) => {
   const [channelDetails, setChannelDetails] = useState({});
