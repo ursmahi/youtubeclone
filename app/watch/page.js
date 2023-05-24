@@ -1,11 +1,20 @@
-'use client'
 "use client";
 import Header from "@/components/Header/Header";
 import store from "@/utils/redux/store";
 import { Provider } from "react-redux";
 import Sidebar from "@/components/sidebar/Sidebar";
 import Watchpage from "@/components/watchpage/Watchpage";
+import { redirect, useSearchParams } from "next/navigation";
 export default function Home() {
+  const location = useSearchParams()
+  console.log(location.get('v')
+  )
+  if(location.get('v')==null){
+    redirect('/')
+  }
+  else if(location.get('v').length==0){
+    redirect('/')
+  }
   return (
     <main className="">
       <Provider store={store}>
