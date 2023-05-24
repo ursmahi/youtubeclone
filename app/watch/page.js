@@ -1,9 +1,10 @@
+'use client'
 "use client";
 import Header from "@/components/Header/Header";
 import store from "@/utils/redux/store";
 import { Provider } from "react-redux";
 import Sidebar from "@/components/sidebar/Sidebar";
-import Homepage from "@/components/Home/Homepage";
+import Watchpage from "@/components/watchpage/Watchpage";
 export default function Home() {
   return (
     <main className="">
@@ -17,7 +18,7 @@ export default function Home() {
             <Sidebar />
           </div>
           <div className="ml-12">
-            <Homepage />
+            <Watchpage />
           </div>
         </div>
       </Provider>
