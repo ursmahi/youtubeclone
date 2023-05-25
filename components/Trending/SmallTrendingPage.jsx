@@ -2,7 +2,7 @@ import React from "react";
 import { convertNumber } from "../../utils/helperfunctions";
 const SmallTrendingPage = ({homePageVideos}) => {
     const {title,uploadedAt,thumbnail,views,channel,duration_formatted} = homePageVideos
-    // console.log(homePageVideos?.durationFormatted)
+     console.log(homePageVideos?.durationFormatted)
     return (
     <div className="w-full md:w-80 mb-3 md:mb-9">
       <div className="relative ">
